@@ -43,8 +43,9 @@
     "webpack-dev-server": "*"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "webpack-dev-server",
     "build": "webpack",
+    "heroku-postbuild": "ng build --prod",
     "test": "mocha --require tests/.setup.js tests/**/*.test.js",
     "test:watch": "mocha --watch --require tests/.setup.js tests/**/*.test.js",
     "clean": "rm -rf dist",
