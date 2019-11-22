@@ -1,5 +1,9 @@
 {
   "name": "react-modele",
+  "engines": {
+    "node": "12.9.1",
+    "yarn": "1.19.1"
+  },
   "devDependencies": {
     "@babel/core": "*",
     "@babel/plugin-proposal-class-properties": "*",
