@@ -44,8 +44,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack",
-    "heroku-postbuild": "ng build --prod",
+    "heroku-postbuild": "webpack",
     "test": "mocha --require tests/.setup.js tests/**/*.test.js",
     "test:watch": "mocha --watch --require tests/.setup.js tests/**/*.test.js",
     "clean": "rm -rf dist",
