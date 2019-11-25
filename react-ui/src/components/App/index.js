@@ -6,7 +6,7 @@ import {
   NavLink,
 } from 'react-router-dom';
 import logo from './logo.svg';
-import './App.css';
+import './app.css';
 
 const App = () => {
   const [message, setMessage] = useState(null);
@@ -77,7 +77,7 @@ const App = () => {
             </header>
           </Route>
         </Switch>
-    </Router>
+      </Router>
     </div>
   );
 
