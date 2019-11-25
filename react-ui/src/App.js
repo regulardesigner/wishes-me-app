@@ -1,4 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
@@ -31,36 +37,47 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        { process.env.NODE_ENV === 'production' ?
-            <p>
-              This is a production build from create-react-app.
-            </p>
-          : <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-        }
-        <p>{'« '}<strong>
-          {isFetching
-            ? 'Fetching message from API'
-            : message}
-        </strong>{' »'}</p>
-        <p><a
-          className="App-link"
-          href="https://github.com/mars/heroku-cra-node"
-        >
-          React + Node deployment on Heroku
-        </a></p>
-        <p><a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a></p>
-      </header>
+      <Router>
+        <Switch>
+          <Route path="/test">
+            <h1>This is a test</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem libero ullam nulla cumque a debitis voluptate in. Non nesciunt illo velit libero. Nostrum eligendi temporibus iste voluptatum ut, eum at?</p>
+            <NavLink to="/">home</NavLink>
+          </Route>
+          <Route path="/">
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              { process.env.NODE_ENV === 'production' ?
+                  <p>
+                    This is a production build from create-react-app.
+                  </p>
+                : <p>
+                    Edit <code>src/App.js</code> and save to reload.
+                  </p>
+              }
+              <p>{'« '}<strong>
+                {isFetching
+                  ? 'Fetching message from API'
+                  : message}
+              </strong>{' »'}</p>
+              <p><a
+                className="App-link"
+                href="https://github.com/mars/heroku-cra-node"
+              >
+                React + Node deployment on Heroku
+              </a></p>
+              <p><a
+                className="App-link"
+                href="https://reactjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Learn React
+              </a></p>
+            </header>
+          </Route>
+        </Switch>
+    </Router>
     </div>
   );
 
